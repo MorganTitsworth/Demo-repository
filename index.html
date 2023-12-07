@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
-    .success{
-        width: 100px;
-        height: 30px;
-        background-color: #198754;
-        color: white;
-        border-radius: 6px;
-        border: none;
-        font-size: 300;
-        font-weight: 400;
+  </head>
+  <style>
+    .dropDownParent {
+      list-style-type: none;
+      padding: 0;
+      overflow: hidden;
+      margin: 0;
+      max-width: min-content;
     }
-    .success:hover{
-        width: 100px;
-        height: 30px;
-        background-color: rgb(20, 109, 68);
-        color: white;
+    .dropDownButton {
+      background-color: #198754;
+      color: white;
+      border: none;
+      cursor: pointer;
     }
-    .success:active{
-        width: 100px;
-        height: 30px;
-        background-color: transparent !important;
-        color: #198754;
-        border: 1px solid #198754;
-        border-radius: 6px;
+    .dropDownContent {
+      list-style-type: none;
+      padding: 0;
+      display: none;
     }
-</style>
-<body>
-    <button id="btn" class="success">Click me</button>
-</body>
+  </style>
+  <body>
+    <ul class="dropDownParent">
+      <li>
+        <button class="dropDownButton">Dropdown</button>
+        <div class="dropDownContent">
+          <a href="#">Register</a>
+          <a href="#">Sign in</a>
+        </div>
+      </li>
+    </ul>
+    <script>
+        const dropDownButton = document.querySelector(".dropDownButton");
+        const dropDownContent = document.querySelector(".dropDownContent");
+        const dropDownHandler = () => {
+            if(dropDownContent.style.display === "block") {
+                dropDownContent.style.display = "none";
+            } else {
+                dropDownContent.style.display = "block";
+            }
+        };
+        dropDownButton.addEventListener("click", dropDownHandler);
+    </script>
+  </body>
 </html>
