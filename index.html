@@ -1,1 +1,58 @@
-we have updated the home page
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .dropDownParent {
+      list-style-type: none;
+      padding: 0;
+      overflow: hidden;
+      margin: 0;
+      max-width: min-content;
+    }
+    .dropDownButton {
+      background-color: #198754;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .dropDownContent {
+      list-style-type: none;
+      padding: 0;
+      display: none;
+    }
+  </style>
+  <body>
+    <ul class="dropDownParent">
+      <li>
+        <button class="dropDownButton">Dropdown</button>
+        <div class="dropDownContent">
+          <a href="#">Register</a>
+          <a href="#">Sign in</a>
+        </div>
+      </li>
+
+      <li>
+        <button class="dropDownButton">Dropdown</button>
+        <div class="dropDownContent">
+          <a href="#">Register</a>
+          <a href="#">Sign in</a>
+        </div>
+    </ul>
+    <script>
+        const dropDownButton = document.querySelector(".dropDownButton");
+        const dropDownContent = document.querySelector(".dropDownContent");
+        const dropDownHandler = () => {
+            if(dropDownContent.style.display === "block") {
+                dropDownContent.style.display = "none";
+            } else {
+                dropDownContent.style.display = "block";
+            }
+        };
+        dropDownButton.addEventListener("click", dropDownHandler);
+    </script>
+  </body>
+</html>
